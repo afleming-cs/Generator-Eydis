@@ -1,5 +1,3 @@
-# generator-eydis [![Build Status](https://secure.travis-ci.org/jonparrott/generator-eydis.png?branch=master)](https://travis-ci.org/jonparrott/generator-eydis)
-
 Eydís [Yeoman](http://yeoman.io) generator
 ==========================================
 
