@@ -1,0 +1,121 @@
+application: <%= appspot_id %>
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+
+- url: /bower_components/(.*)
+  static_files: bower_components/\1
+  upload: bower_components/(.*)
+
+- url: /(.*\.css)
+  mime_type: text/css
+  static_files: app/\1
+  upload: app/(.*\.css)
+
+- url: /(.*\.html)
+  mime_type: text/html
+  static_files: app/\1
+  upload: app/(.*\.html)
+
+- url: /(.*\.ico)
+  mime_type: image/x-icon
+  static_files: app/\1
+  upload: app/(.*\.ico)
+
+- url: /(.*\.js)
+  mime_type: text/javascript
+  static_files: app/\1
+  upload: app/(.*\.js)
+
+- url: /(.*\.json)
+  mime_type: application/json
+  static_files: app/\1
+  upload: app/(.*\.json)
+
+- url: /(.*\.m4v)
+  mime_type: video/m4v
+  static_files: app/\1
+  upload: app/(.*\.m4v)
+
+- url: /(.*\.mp4)
+  mime_type: video/mp4
+  static_files: app/\1
+  upload: app/(.*\.mp4)
+
+- url: /(.*\.(ogg|oga))
+  mime_type: audio/ogg
+  static_files: app/\1
+  upload: app/(.*\.(ogg|oga))
+
+- url: /(.*\.ogv)
+  mime_type: video/ogg
+  static_files: app/\1
+  upload: app/(.*\.ogv)
+
+- url: /(.*\.otf)
+  mime_type: font/opentype
+  static_files: app/\1
+  upload: app/(.*\.otf)
+
+- url: /(.*\.(svg|svgz))
+  mime_type: images/svg+xml
+  static_files: app/\1
+  upload: app/(.*\.(svg|svgz))
+
+- url: /(.*\.ttf)
+  mime_type: font/truetype
+  static_files: app/\1
+  upload: app/(.*\.ttf)
+
+- url: /(.*\.txt)
+  mime_type: text/plain
+  static_files: app/\1
+  upload: app/(.*\.txt)
+
+- url: /(.*\.webm)
+  mime_type: video/webm
+  static_files: app/\1
+  upload: app/(.*\.webm)
+
+- url: /(.*\.webp)
+  mime_type: image/webp
+  static_files: app/\1
+  upload: app/(.*\.webp)
+
+- url: /(.*\.woff)
+  mime_type: application/x-font-woff
+  static_files: app/\1
+  upload: app/(.*\.woff)
+
+- url: /(.*\.xml)
+  mime_type: application/xml
+  static_files: app/\1
+  upload: app/(.*\.xml)
+
+# image files
+- url: /(.*\.(bmp|gif|ico|jpeg|jpg|png))
+  static_files: app/\1
+  upload: app/(.*\.(bmp|gif|ico|jpeg|jpg|png))
+
+# audio files
+- url: /(.*\.(mid|midi|mp3|wav))
+  static_files: app/\1
+  upload: app/(.*\.(mid|midi|mp3|wav))
+
+# windows files
+- url: /(.*\.(doc|exe|ppt|rtf|xls))
+  static_files: app/\1
+  upload: app/(.*\.(doc|exe|ppt|rtf|xls))
+
+# compressed files
+- url: /(.*\.(bz2|gz|rar|tar|tgz|zip))
+  static_files: app/\1
+  upload: app/(.*\.(bz2|gz|rar|tar|tgz|zip))
+
+# site root
+- url: /.*
+  static_files: app/index.html
+  upload: app/index.html

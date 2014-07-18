@@ -1,0 +1,25 @@
+{
+  "name": "<%= appname %>",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "1.2.16",
+    "bootstrap": "~3.1.1",
+    "angular-resource": "1.2.16",
+    "angular-cookies": "1.2.16",
+    "angular-sanitize": "1.2.16",
+    "angular-animate": "1.2.16",
+    "angular-touch": "1.2.16",
+    "angular-route": "1.2.16",
+    "eydis-gapi": "https://bitbucket.org/cloudsherpas/eyd-s-gapi.git",
+    "cs-angular-utilities": "git@bitbucket.org:cloudsherpas/angular-utilities.git#master",
+    "moment": "~2.7.0",
+    "font-awesome": "~4.1.0",
+    "angular-ui-select2": "~0.0.5",
+    "angular-ui-router": "~0.2.10"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.16",
+    "angular-scenario": "1.2.16"
+  },
+  "appPath": "app"
+}

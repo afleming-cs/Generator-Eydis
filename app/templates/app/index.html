@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <!-- base ensures that all URLs to relative resources work from the root. This ensure HTML5 mode will work -->
+    <base href="/">
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <title></title>
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- Build tags compile everything into a single css file -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- Bower tags are automatically wired. Do not modify anything between them -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css styles/styles.css -->
+    <!-- Add manually wired styles here -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="<%= appnamecamel %>App" ng-controller="AppController">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Application Content -->
+
+    <!-- Google Sign-in -->
+    <gapi-sign-in ready="ready"></gapi-sign-in>
+
+    <!-- Google user info -->
+    <div class="container">
+      <user-info></user-info>
+    </div>
+
+    <!-- This contains the sections -->
+    <div ng-view="" ng-show="ready"></div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- As above, build tag is used to compile everything together -->
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- Bower-managed scripts. Do not modify this. It'll be overwritten -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/scripts.js -->
+    <!-- Scripts in the app folder are automatically routed. Do not modify anything in here, it'll be overwritten -->
+    <!-- wirescripts -->
+    <!-- endwirescripts -->
+    <!-- Add manually wired scripts here -->
+    <!-- endbuild -->
+
+    <!-- Google API Loader -->
+    <script src="https://apis.google.com/js/client.js?onload=_gapi_load_callback"></script>
+</body>
+</html>
