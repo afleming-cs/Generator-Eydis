@@ -59,6 +59,7 @@ var EydisGenerator = yeoman.generators.Base.extend({
     this.template('app.dist.yaml');
     this.copy('editorconfig');
     this.template('gulpfile.js');
+    this.template('gulp-eydis.js');
     this.copy('jshintrc');
     this.copy('karma.conf.js');
 
