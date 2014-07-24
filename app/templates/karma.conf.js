@@ -26,6 +26,7 @@ module.exports = function(config) {
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/cs-angular-utilities/loading.js',
+      'app/**/*.html',
       'app/**/*.js'
     ],
 
@@ -51,7 +52,8 @@ module.exports = function(config) {
     plugins: [
       'karma-phantomjs-launcher',
       'karma-jasmine',
-      'karma-coverage'
+      'karma-coverage',
+      'karma-ng-html2js-preprocessor'
     ],
 
     // Coverage
@@ -61,8 +63,13 @@ module.exports = function(config) {
       type : 'text',
     },
 
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'app/'
+    },
+
     preprocessors:{
-      'app/**/!(*_test).js': 'coverage'
+      'app/**/!(*_test).js': ['coverage'],
+      'app/**/*.html': ['ng-html2js']
     },
 
     // Continuous Integration mode
