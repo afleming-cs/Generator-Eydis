@@ -7,4 +7,5 @@
 
 angular.module('<%= appnamecamel %>App.app_controller', ['eydis.gapi.signin'])
 .controller('AppController', function($scope){
+  /* jshint unused: false */
 });

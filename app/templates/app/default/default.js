@@ -18,10 +18,11 @@ config(function ($routeProvider) {
       templateUrl: 'default/default.html',
       controller: 'Default',
       controllerAs: 'default'
-    })
+    });
 }).
 
 /* Default section controller */
 controller('Default', function($scope){
-  this.appname = "<%= appname %>";
+  /* jshint unused: false */
+  this.appname = '<%= appname %>';
 });
