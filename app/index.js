@@ -53,6 +53,8 @@ var EydisGenerator = yeoman.generators.Base.extend({
   app: function () {
 
     /* Top level files */
+    this.copy('editorconfig', '.editorconfig');
+    this.copy('jshintrc', '.jshintrc');
     this.template('_package.json', 'package.json');
     this.template('_bower.json', 'bower.json');
     this.template('app.dev.yaml');
@@ -72,13 +74,10 @@ var EydisGenerator = yeoman.generators.Base.extend({
     this.template('app/precompiled-templates.js');
 
     /* Sections */
-    this.directory('app/default');
-    this.template('app/default/default.js');
+    this.invoke("eydis:section", {args: ['default'], options: {nested: true, appName: this.appName}});
   },
 
   projectfiles: function () {
-    this.copy('editorconfig', '.editorconfig');
-    this.copy('jshintrc', '.jshintrc');
   }
 });
 
