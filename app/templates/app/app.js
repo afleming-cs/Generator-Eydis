@@ -5,7 +5,7 @@
  */
 angular
   .module('<%= appnamecamel %>App', [
-    /* Include sections here. The sections will include their own depedencies */
+    /* Include sections here. The sections will include their own dependencies */
     'section.default',
 
     /* Internal depedencies */
