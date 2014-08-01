@@ -218,11 +218,11 @@ Here, we're waiting until the drive service is ready and then making the call to
 
 All that's left is to show them in the template:
 
-    &gt;ul>
-      &gt;li ng-repeat="file in file_list.files.items">
+    <ul>
+      <li ng-repeat="file in file_list.files.items">
         {{file.title}}
-      &gt;/li>
-    &gt;/ul>
+      </li>
+    </ul>
 
 
 Summary
