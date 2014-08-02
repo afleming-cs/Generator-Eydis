@@ -13,7 +13,7 @@ var run_gae = function(yaml, port, admin_port){
   admin_port = admin_port || 9001;
   port = port || 8081;
   var silent = false;
-  var child = exec('dev_appserver.py --port ' + port + ' --admin_port ' + admin_port + ' ' + yaml);
+  var child = exec('dev_appserver.py --host 0.0.0.0 --admin_host 0.0.0.0 --port ' + port + ' --admin_port ' + admin_port + ' ' + yaml);
   child.stdout.on('data', function (d) {
     if(!silent){ console.log('GAE: ' + d.trim()); }
   });

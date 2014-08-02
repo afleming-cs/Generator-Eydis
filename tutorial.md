@@ -7,9 +7,9 @@ Eydís is not a framework in the typical sense. Eydís is a collection of tools 
 Getting started
 ---------------
 
-In order to begin using Eydís you need a working and sane node.js environment. Make sure the yeoman, bower, and karma are all installed
+In order to begin using Eydís you need a working and sane node.js environment. Make sure the yeoman, bower, gulp,  and karma are all installed
 
-    npm install -g yo bower karma
+    npm install -g yo bower karma gulp
 
 Now it's just necessary to install the Eydís yeoman generator:
 
