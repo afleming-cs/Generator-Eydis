@@ -53,6 +53,7 @@ var EydisGenerator = yeoman.generators.Base.extend({
   app: function () {
 
     /* Top level files */
+    this.copy('gitignore', '.gitignore');
     this.copy('editorconfig', '.editorconfig');
     this.copy('jshintrc', '.jshintrc');
     this.template('_package.json', 'package.json');
