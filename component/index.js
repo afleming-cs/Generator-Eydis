@@ -9,6 +9,11 @@ var ComponentGenerator = yeoman.generators.NamedBase.extend({
     this.name = inflection.underscore(this.name);
     this.name_camel = inflection.camelize(this.name, true);
     this.name_dashed = inflection.dasherize(this.name);
+
+
+    this.on('end', function () {
+      this.spawnCommand('gulp', ['wire']);
+    });
   },
 
   askFor: function () {
