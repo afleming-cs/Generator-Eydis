@@ -168,7 +168,7 @@ When the page refreshes you'll likely have to re-login to approve the new scopes
         var ready = $gapi.load('drive', 'v2');
 
         var list_files = function(){
-          return $gapi.promise($gapi.client.drive.files.list({maxResults: 10}));
+          return $gapi.client.drive.files.list({maxResults: 10});
         };
 
         return {
@@ -191,8 +191,10 @@ Then we loaded the Google Drive API- this returns a promise.
 Finally, we create a simple function that lists files for us:
 
     var list_files = function(){
-      return $gapi.promise($gapi.client.drive.files.list({maxResults: 10}));
+      return $gapi.client.drive.files.list({maxResults: 10});
     };
+
+Notice that unlike the normal ``gapi``, we're not calling ``execute``. Eydís wraps all of the gapi functions to make them return promises instead.
 
 
 Consuming Services
