@@ -10,9 +10,7 @@
     "angular-animate": "1.2.16",
     "angular-touch": "1.2.16",
     "angular-route": "1.2.16",
-    "eydis-gapi": "https://bitbucket.org/cloudsherpas/eyd-s-gapi.git",
-    "cs-angular-utilities": "git@bitbucket.org:cloudsherpas/angular-utilities.git#master",
-    "moment": "~2.7.0",
+    "eydis-gapi": "https://github.com/jonparrott/Generator-Eydis.git",
     "font-awesome": "~4.1.0"
   },
   "devDependencies": {
