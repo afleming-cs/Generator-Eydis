@@ -3,7 +3,7 @@
 var gulp = require('gulp');
 var wiredep = require('wiredep');
 var merge = require('merge-stream');
-var exec = require('child_process').exec;
+var spawn = require('child_process').spawn;
 var $ = require('gulp-load-plugins')();
 var opn = require('opn');
 var chalk = require('chalk');
@@ -13,18 +13,22 @@ var run_gae = function(yaml, port, admin_port){
   admin_port = admin_port || 9001;
   port = port || 8081;
   var silent = false;
-  var child = exec('dev_appserver.py --host 0.0.0.0 --admin_host 0.0.0.0 --port ' + port + ' --admin_port ' + admin_port + ' ' + yaml);
+  var child = spawn('dev_appserver.py', ['--host', '0.0.0.0', '--admin_host', '0.0.0.0', '--port', port, '--admin_port', admin_port, yaml]);
   child.stdout.on('data', function (d) {
-    if(!silent){ console.log('GAE: ' + d.trim()); }
+    if(!silent){ console.log('GAE: ' + String(d).trim()); }
   });
   child.stderr.on('data', function (d) {
-    if(!silent){ console.log('GAE: ' + d.trim()); }
+    if(!silent){ console.log('GAE: ' + String(d).trim()); }
     /* Detect server startup and open it browser */
-    if(d.indexOf('Starting module "default"') !== -1){
+    if(String(d).indexOf('Starting module "default"') !== -1){
       console.log('App Engine Server started successfully, silencing it now.');
       silent = true;
       opn('http://localhost:8081');
     }
+  });
+  process.on('exit', function() {
+    console.log('killing child processes');
+    child.kill();
   });
 };
 
